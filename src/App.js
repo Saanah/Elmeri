@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Etusivu from "./components/Etusivu";
+import RaporttiHistoria from "./components/RaporttiHistoria";
+import Ohjeet from "./components/Ohjeet";
+import Raportinluonti from './components/Raportinluonti';
+import PdfUpload from "./components/PdfUpload";
+import Tarkastuskohdat from "./components/Tarkastuskohdat";
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <Routes>
+    <Route path="/" element={<Etusivu/>}></Route>
+    <Route path="/raportit" element={<RaporttiHistoria/>}></Route>
+    <Route path="/tarkastuskohdat" element={<Tarkastuskohdat/>}></Route>
+    <Route path="/ohjeet" element={<Ohjeet/>}></Route>
+    <Route path="/luo_uusi_raportti" element={<Tarkastuskohdat/>}></Route>
+  </Routes>
   );
 }
 
 export default App;
+

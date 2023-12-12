@@ -1,38 +1,168 @@
 .App {
   text-align: center;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Etusivu{
+  padding: 1rem;
+  width: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.Ohjeet{
+
+  height: calc(100vh - 100px);
+  width: 100%;
+}
+
+.Raporttihistoria-container{
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.Header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(90, 134, 255);
+  height: 80px;
+  padding: 1rem 2rem 1rem 2rem;
+  text-align: center;
+  font-size: x-large;
+  color: #fff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Raportti-sorting{
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: auto;
+  height: fit-content;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+
+.Raporttikortti{
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 1rem 1.5rem 1rem;
+  border-bottom: 2px solid grey;
+}
+
+.Raporttitiedot{
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: space-between;
+  margin: 0em 1em 0 1em;
+  padding-top: 1em;
+}
+
+button {
+  width: 6em;
+  min-height: 2em;
+  font-size: 1rem;
+}
+
+.Etusivu button{
+
+  width: 20em;
+  margin: 0.8rem;
+}
+
+.Raporttiosat {
+  flex: 1 1 100%;
+  margin-right: 10px; 
+}
+
+.Raporttikortti:active{
+
+  background-color: #e8e8e8;
+}
+
+.errorButton{
+  border-style: none;
+  background-color: #cc0000;
+  color: #ececec;
+}
+
+input{
+  width: 80%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin: 1rem 1rem 0rem 1rem;
+  align-self: center;
+}
+
+.FormControl {
+  width: 96%;
+  margin-top: 0.8rem;
+}
+
+.button {
+  font-size: 100px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.mapObservers {
+  .center {
+    text-align: center;}
 }
