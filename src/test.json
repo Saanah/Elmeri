@@ -1,0 +1,277 @@
+{
+  "raport_raw_data": [
+    {
+      "raportName": "Elmeri_12.20.2023",
+      "date_created": "12.20.2023",
+      "observer": "Kalle",
+      "pdf": "",
+      "totalDefiencyScore": 58,
+      "totalComplianceScore": 44,
+      "validityRate": 9.67,
+      "room_data": [
+        {
+          "roomName": "A501",
+          "mainTopics": [
+            {
+              "id": 1,
+              "mainTopicName": "Työskentely",
+              "totalScore": 3,
+              "subTopics": [
+                {
+                  "id": 1,
+                  "subTopicName": "Riskinotto, suojaimet, vaatetus",
+                  "complianceScore": 5,
+                  "deficiencyScore": 2
+                }
+              ]
+            },
+            {
+              "id": 2,
+              "mainTopicName": "Ergonomia",
+              "totalScore": 8,
+              "subTopics": [
+                {
+                  "id": 2,
+                  "subTopicName": "Fyysinen kuormitus",
+                  "complianceScore": 7,
+                  "deficiencyScore": 0
+                },
+                {
+                  "id": 3,
+                  "subTopicName": "Työpisteiden ja -välineiden ergonomia",
+                  "complianceScore": 4,
+                  "deficiencyScore": 3
+                }
+              ]
+            },
+            {
+              "id": 3,
+              "mainTopicName": "Kone- ja laiteturvallisuus",
+              "totalScore": 11,
+              "subTopics": [
+                {
+                  "id": 4,
+                  "subTopicName": "Koneiden kunto ja suojalaitteet",
+                  "complianceScore": 8,
+                  "deficiencyScore": 1
+                },
+                {
+                  "id": 5,
+                  "subTopicName": "Koneiden hallintalaitteet ja merkinnät",
+                  "complianceScore": 2,
+                  "deficiencyScore": 0
+                }
+              ]
+            },
+            {
+              "id": 4,
+              "mainTopicName": "Liikkumisturvallisuus",
+              "totalScore": 6,
+              "subTopics": [
+                {
+                  "id": 6,
+                  "subTopicName": "Kulkuteiden ja lattioiden rakenne, putoamissuojaus",
+                  "complianceScore": 6,
+                  "deficiencyScore": 3
+                },
+                {
+                  "id": 7,
+                  "subTopicName": "Poistumistiet",
+                  "complianceScore": 6,
+                  "deficiencyScore": 3
+                }
+              ]
+            },
+            {
+              "id": 5,
+              "mainTopicName": "Järjestys",
+              "totalScore": 12,
+              "subTopics": [
+                {
+                  "id": 8,
+                  "subTopicName": "Kulkuteiden ja lattioiden järjestys",
+                  "complianceScore": 4,
+                  "deficiencyScore": 2
+                },
+                {
+                  "id": 9,
+                  "subTopicName": "Pöydät, päälliset, hyllyt",
+                  "complianceScore": 4,
+                  "deficiencyScore": 2
+                },
+                {
+                  "id": 10,
+                  "subTopicName": "Jäteastiat",
+                  "complianceScore": 4,
+                  "deficiencyScore": 2
+                }
+              ]
+            },
+            {
+              "id": 6,
+              "mainTopicName": "Työympäristötekijät",
+              "totalScore": 18,
+              "subTopics": [
+                {
+                  "id": 11,
+                  "subTopicName": "Melu",
+                  "complianceScore": 9,
+                  "deficiencyScore": 0
+                },
+                {
+                  "id": 12,
+                  "subTopicName": "Valaistus",
+                  "complianceScore": 3,
+                  "deficiencyScore": 1
+                },
+                {
+                  "id": 13,
+                  "subTopicName": "Lämpöolosuhteet",
+                  "complianceScore": 3,
+                  "deficiencyScore": 1
+                },
+                {
+                  "id": 14,
+                  "subTopicName": "Ilman puhtaus ja käsiteltävät aineet",
+                  "complianceScore": 3,
+                  "deficiencyScore": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "roomName": "A503",
+          "mainTopics": [
+            {
+              "id": 1,
+              "mainTopicName": "Työskentely",
+              "totalScore": 6,
+              "subTopics": [
+                {
+                  "id": 1,
+                  "subTopicName": "Riskinotto, suojaimet, vaatetus",
+                  "complianceScore": 1,
+                  "deficiencyScore": 5
+                }
+              ]
+            },
+            {
+              "id": 2,
+              "mainTopicName": "Ergonomia",
+              "totalScore": 3,
+              "subTopics": [
+                {
+                  "id": 2,
+                  "subTopicName": "Fyysinen kuormitus",
+                  "complianceScore": 3,
+                  "deficiencyScore": 0
+                },
+                {
+                  "id": 3,
+                  "subTopicName": "Työpisteiden ja -välineiden ergonomia",
+                  "complianceScore": 4,
+                  "deficiencyScore": 3
+                }
+              ]
+            },
+            {
+              "id": 3,
+              "mainTopicName": "Kone- ja laiteturvallisuus",
+              "totalScore": 11,
+              "subTopics": [
+                {
+                  "id": 4,
+                  "subTopicName": "Koneiden kunto ja suojalaitteet",
+                  "complianceScore": 8,
+                  "deficiencyScore": 1
+                },
+                {
+                  "id": 5,
+                  "subTopicName": "Koneiden hallintalaitteet ja merkinnät",
+                  "complianceScore": 2,
+                  "deficiencyScore": 0
+                }
+              ]
+            },
+            {
+              "id": 4,
+              "mainTopicName": "Liikkumisturvallisuus",
+              "totalScore": 6,
+              "subTopics": [
+                {
+                  "id": 6,
+                  "subTopicName": "Kulkuteiden ja lattioiden rakenne, putoamissuojaus",
+                  "complianceScore": 6,
+                  "deficiencyScore": 3
+                },
+                {
+                  "id": 7,
+                  "subTopicName": "Poistumistiet",
+                  "complianceScore": 6,
+                  "deficiencyScore": 3
+                }
+              ]
+            },
+            {
+              "id": 5,
+              "mainTopicName": "Järjestys",
+              "totalScore": 12,
+              "subTopics": [
+                {
+                  "id": 8,
+                  "subTopicName": "Kulkuteiden ja lattioiden järjestys",
+                  "complianceScore": 4,
+                  "deficiencyScore": 2
+                },
+                {
+                  "id": 9,
+                  "subTopicName": "Pöydät, päälliset, hyllyt",
+                  "complianceScore": 4,
+                  "deficiencyScore": 2
+                },
+                {
+                  "id": 10,
+                  "subTopicName": "Jäteastiat",
+                  "complianceScore": 4,
+                  "deficiencyScore": 2
+                }
+              ]
+            },
+            {
+              "id": 6,
+              "mainTopicName": "Työympäristötekijät",
+              "totalScore": 18,
+              "subTopics": [
+                {
+                  "id": 11,
+                  "subTopicName": "Melu",
+                  "complianceScore": 9,
+                  "deficiencyScore": 0
+                },
+                {
+                  "id": 12,
+                  "subTopicName": "Valaistus",
+                  "complianceScore": 3,
+                  "deficiencyScore": 1
+                },
+                {
+                  "id": 13,
+                  "subTopicName": "Lämpöolosuhteet",
+                  "complianceScore": 3,
+                  "deficiencyScore": 1
+                },
+                {
+                  "id": 14,
+                  "subTopicName": "Ilman puhtaus ja käsiteltävät aineet",
+                  "complianceScore": 3,
+                  "deficiencyScore": 1
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
