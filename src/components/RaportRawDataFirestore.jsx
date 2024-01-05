@@ -12,29 +12,30 @@ import {
 
 export default function RaportRawDataFirestore() {
   const raportRawDataCollection = collection(firestoreDb, "raport_raw_data");
-  const raportData = JSONDummyData;
+  const raportData = JSONDummyData;  //Täytyy tulevaisuudessa vaihtaa inputtien datoihin
 
   //Tietojen lataus firestoreen
   async function uploadRawRaportDataToFirestore() {
     try {
-      const raportData = JSONDummyData;
       const docRef = await addDoc(raportRawDataCollection, raportData);
       const id = docRef.id;
       console.log(`Raport data uploaded successfully with id of ${id}!`);
       await setDoc(doc(firestoreDb, `raport_raw_data/${id}`), { id }, { merge: true }); //generoidun id:n lisääminen dokumenttiin
-    } catch (error) {
+    }
+    catch (error) {
       console.error("Error uploading raport data:", error);
     }
   }
 
-  //Tietojen haku ja loggaus konsoliin (testing)
+  //Tietojen haku ja loggaus konsoliin (lähinnä testaukseen)
   async function fetchAndLogRaportDataFromFirestore() {
     try {
       const raportRawDataSnapshot = await getDocs(raportRawDataCollection);
       const fetchedRaportData = raportRawDataSnapshot.docs.map((doc) => doc.data());
       console.log("Fetched data:");
       console.log(JSON.stringify(fetchedRaportData, null, 2));
-    } catch (error) {
+    }
+    catch (error) {
       console.error("Error fetching raport data:", error);
     }
   }
@@ -42,10 +43,10 @@ export default function RaportRawDataFirestore() {
   return (
     <div>
       <Button onClick={uploadRawRaportDataToFirestore}>
-        Upload raw data to firestore
+        Upload raw data to firestore (TEST BUTTON)
       </Button>
       <Button onClick={fetchAndLogRaportDataFromFirestore}>
-        Fetch raw data from firestore
+        Fetch raw data from firestore (TEST BUTTON)
       </Button>
     </div>
   );
