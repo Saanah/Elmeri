@@ -27,7 +27,7 @@ function Raportinluonti() {
   };
 
   const handleSelectClick = () => {
-    // tähän logic
+   
   };
 
   return (

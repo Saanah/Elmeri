@@ -100,13 +100,7 @@ button {
   color: #ececec;
 }
 
-input{
-  width: 80%;
-  padding: 0.5rem;
-  font-size: 1rem;
-  margin: 1rem 1rem 0rem 1rem;
-  align-self: center;
-}
+
 
 .FormControl {
   width: 96%;
@@ -115,6 +109,28 @@ input{
 
 .button {
   font-size: 100px;
+}
+
+input[type="text"] {
+  width: fit-content;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  height: 15px;
+
+}
+
+/* Add styles for when the input is focused */
+input[type="text"]:focus {
+  border-color: #007bff; /* Change border color when focused */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add a subtle box shadow */
+}
+
+/* Add styles for placeholder text */
+input[type="text"]::placeholder {
+  color: #999;
 }
 
 a {
@@ -165,4 +181,102 @@ a {
 .mapObservers {
   .center {
     text-align: center;}
+}
+
+
+.objectives-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.objective-box {
+  border: 1px solid #ccc;
+  padding: 25px;
+  margin: 10px;
+  text-align: center;
+  background-color: #f8f8f8;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  border-radius: 15px;
+  margin: 10px auto;
+  max-width: 300px;
+  width: 100%;
+}
+
+.objective-box:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#buttons {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  outline: 2px, black;
+}
+
+#button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  outline: 2px, black;
+  width: 200px;
+  border: 1px solid white;
+  
+  
+  
+}
+
+#tila{
+  
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  outline: 2px, black;
+  width: 100px;
+  border: 1px solid white;
+}
+
+#tila:hover {
+  background-color: #2980b9; 
+}
+
+#tila2{
+  
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  outline: 2px, black;
+  width: 150px;
+  border: 1px solid white;
+}
+
+#tila2:hover {
+  background-color: #2980b9; /* Change the background color on hover */
+}
+
+
+
+#buttons:hover {
+  background-color: #2980b9;
 }
