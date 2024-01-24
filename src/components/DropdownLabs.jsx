@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Select, MenuItem, FormControl, InputLabel } from "@mui/material";
 
-export default function DropdownLabs() {
-  const [selectedValue, setSelectedValue] = useState("");
+export default function DropdownLabs({onSelectedLab}) {
+  const [selectedLab, setSelectedLab] = useState("");
 
   const handleChange = (event) => {
-    setSelectedValue(event.target.value);
+    setSelectedLab(event.target.value); //useless?
+    onSelectedLab(event.target.value);
   };
 
   return (
@@ -17,13 +18,13 @@ export default function DropdownLabs() {
         className="FormControl"
         labelId="dropdown-label"
         id="dropdown"
-        value={selectedValue}
+        value={selectedLab}
         onChange={handleChange}
       >
         <MenuItem value="">
           <em>Ei mitään</em>
         </MenuItem>
-        <MenuItem value="hybridilabra">5A101</MenuItem>
+        <MenuItem value="5A101">5A101</MenuItem>
         <MenuItem value="5A102">5A102</MenuItem>
         <MenuItem value="5A103">5A103</MenuItem>
         <MenuItem value="5A105">5A105</MenuItem>
