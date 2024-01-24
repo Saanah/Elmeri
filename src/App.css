@@ -26,6 +26,20 @@
   justify-content: center;
 }
 
+.CreateNewRaport-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.CreateNewRaport-items{
+
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
 .Header{
   display: flex;
   flex-direction: row;
@@ -72,6 +86,14 @@
   padding-top: 1em;
 }
 
+.Observers {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100px;
+  margin: 10px auto;
+}
+
 button {
   width: 6em;
   min-height: 2em;
@@ -109,7 +131,7 @@ input{
 }
 
 .FormControl {
-  width: 96%;
+  width: 100%;
   margin-top: 0.8rem;
 }
 

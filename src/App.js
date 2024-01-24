@@ -5,6 +5,7 @@ import Raportinluonti from './components/Raportinluonti';
 import PdfUpload from "./components/PdfUpload";
 import Tarkastuskohdat from "./components/Tarkastuskohdat";
 import { Routes, Route } from 'react-router-dom';
+import CreateNewRaport from "./components/CreateNewRaport";
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
     <Route path="/" element={<Etusivu/>}></Route>
     <Route path="/raportit" element={<RaporttiHistoria/>}></Route>
     <Route path="/tarkastuskohdat" element={<Tarkastuskohdat/>}></Route>
-    <Route path="/luo_uusi_raportti" element={<Tarkastuskohdat/>}></Route>
+    <Route path="/luo_uusi_raportti" element={<CreateNewRaport/>}></Route>
   </Routes>
   );
 }

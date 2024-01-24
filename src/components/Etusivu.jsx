@@ -3,8 +3,8 @@ import "../App.css";
 import Button from "@mui/material/Button";
 import { IoCreate } from "react-icons/io5";
 import { TbReportAnalytics } from "react-icons/tb";
-import { AiOutlineInfoCircle } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import RaportRawDataFirestore from "./RaportRawDataFirestore";
 
 export default function Etusivu() {
 
@@ -14,6 +14,7 @@ export default function Etusivu() {
         <p>Elmeri</p>
       </div>
       <div className="Etusivu">
+        <RaportRawDataFirestore/>
         <Link to="luo_uusi_raportti">
           <Button
             variant="outlined"
