@@ -1,7 +1,6 @@
 import "./App.css";
 import Etusivu from "./components/Etusivu";
 import RaporttiHistoria from "./components/RaporttiHistoria";
-import Ohjeet from "./components/Ohjeet";
 import Raportinluonti from './components/Raportinluonti';
 import PdfUpload from "./components/PdfUpload";
 import Tarkastuskohdat from "./components/Tarkastuskohdat";
