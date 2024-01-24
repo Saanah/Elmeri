@@ -13,7 +13,6 @@ function App() {
     <Route path="/" element={<Etusivu/>}></Route>
     <Route path="/raportit" element={<RaporttiHistoria/>}></Route>
     <Route path="/tarkastuskohdat" element={<Tarkastuskohdat/>}></Route>
-    <Route path="/ohjeet" element={<Ohjeet/>}></Route>
     <Route path="/luo_uusi_raportti" element={<CreateNewRaport/>}></Route>
   </Routes>
   );
