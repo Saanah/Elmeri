@@ -5,6 +5,7 @@ import { IoCreate } from "react-icons/io5";
 import { TbReportAnalytics } from "react-icons/tb";
 import { AiOutlineInfoCircle } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import ReactCamera from "./ReactCamera";
 
 export default function Etusivu() {
 
@@ -14,6 +15,7 @@ export default function Etusivu() {
         <p>Elmeri</p>
       </div>
       <div className="Etusivu">
+        <ReactCamera/>
         <Link to="luo_uusi_raportti">
           <Button
             variant="outlined"
