@@ -74,7 +74,7 @@ const Raportti = () => {
   { target: 'Työympäristötekijät', objs: [{ obj: 'Melu' }, { obj: 'Valaistus' }, { obj: 'Lämpöolosuhteet' }, { obj: 'Ilman puhtaus ja käsiteltävät aineet' }] }
   ]
 
-  
+
   let currentTarget, currentObjectives;
   const [currentIndex, setIndex] = useState(0);
 
@@ -99,7 +99,7 @@ const Raportti = () => {
 
 
   const addName = () => {
-    
+
     if (name.trim() !== '') {
       setNames([...names, name]);
       setName('');
@@ -147,6 +147,8 @@ const Raportti = () => {
       vastuutaho: [...prevFormData.vastuutaho, inputVastuutaho],
       kiireellisyys: [...prevFormData.kiireellisyys, inputKiireellisyys],
     }));
+
+    console.log(formData)
 
     setInputPoikkeama('');
     setInputKiireellisyys('');
@@ -204,11 +206,11 @@ const Raportti = () => {
     setShowCamera(true)
   }
 
-  
-  const currentIndexnext = laborators.findIndex((lab) => lab.value === selectedLaborator);  
+
+  const currentIndexnext = laborators.findIndex((lab) => lab.value === selectedLaborator);
 
   const goToNext = () => {
-    const nextIndex = 0; 
+    const nextIndex = 0;
     handleChange({ target: { value: laborators[nextIndex].value } });
   };
   const goToNext1 = () => {
@@ -232,7 +234,7 @@ const Raportti = () => {
     handleChange({ target: { value: laborators[nextIndex].value } });
   };
 
-  
+
   const filteredObsObjects = selectedLaborator
     ? obsObjects.filter((item) => item.target === selectedLaborator)
     : [];
@@ -243,52 +245,53 @@ const Raportti = () => {
       <p>{setDate()}</p>
 
       <input
-        id = "inputtext"
+        id="inputtext"
         type="text"
         value={name}
         onChange={(e) => setName(e.target.value)}
         placeholder="Lisää Nimi"
       />
-      <button  id = "button"onClick={addName}>Lisää</button>
+      <button id="button" onClick={addName}>Lisää</button>
 
       <p>Havainnoitsijat:</p>
       <ul style={{ listStyleType: 'none', padding: 0 }}>
         {names.map((name, index) => (
           <li key={index} style={{ marginBottom: '10px' }}>
             <span style={{ marginRight: '10px' }}>{name}</span>
-            <button id = "backfront" onClick={() => deleteName(index)}>Delete</button>
+            <button id="backfront" onClick={() => deleteName(index)}>Delete</button>
           </li>
         ))}
       </ul>
 
       <p>Valitse Tila</p>
       <div>
-      <button id = "tila"  onClick={goToNext}>
-        5A101
-      </button>
-      <button id = "tila"  onClick={goToNext1}>
-        5A102
-      </button>
-      <button id = "tila"  onClick={goToNext2}>
-        5A103
-      </button>
-      <button id = "tila"  onClick={goToNext3}>
-        5B103
-      </button>
-      <button id = "tila"  onClick={goToNext4}>
-        5A105
-      </button>
-      <button id = "tila2"  onClick={goToNext5}>
-        LVI-tekniikka
-      </button>
-    </div>
+        <button id="tila" onClick={goToNext}>
+          5A101
+        </button>
+        <button id="tila" onClick={goToNext1}>
+          5A102
+        </button>
+        <button id="tila" onClick={goToNext2}>
+          5A103
+        </button>
+        <button id="tila" onClick={goToNext3}>
+          5B103
+        </button>
+        <button id="tila" onClick={goToNext4}>
+          5A105
+        </button>
+        <button id="tila2" onClick={goToNext5}>
+          LVI-tekniikka
+        </button>
+      </div>
 
       {selectedLaborator && (
         <div>
           <h3>You selected: {selectedLaborator}</h3>
           <h3>Tarkastelukohde:{currentTarget}</h3>
-          <button id ="tila" onClick={decrementIndex}>Palaa</button>
-          <button id= "tila" onClick={incrementIndex}>Seuraava</button>
+
+          <button id="tila" onClick={decrementIndex}>Palaa</button>
+          <button id="tila" onClick={incrementIndex}>Seuraava</button>
           <div className='objectives-container'>
             {currentObjectives.map((objective, index) => (
               <div key={index} className='objective-box'>
@@ -332,25 +335,25 @@ const Raportti = () => {
                     <br />
                     <br />
                     {showCameraButton && (
-                    <button onClick={showCameraImage}>Open Camera</button>
+                      <button onClick={showCameraImage}>Open Camera</button>
                     )}
-                    
+
                     {showCamera && (
-                    <div>
-                          <Camera
-                            ref={(cam) => setCamera(cam)}
-                            width="100%"
-                            height="auto"
-                          />
-                          <button onClick={takePhoto}>Take Photo</button>
-                          {imageData && (
-                            <>
-                              <img src={`data:image/jpeg;base64,${imageData}`} alt="Captured" />
-                              <button onClick={savePhoto}>Save Photo</button>
-                              <button onClick={deletePhoto}>Delete Photo</button>
-                            </>
-                          )}
-                    </div>
+                      <div>
+                        <Camera
+                          ref={(cam) => setCamera(cam)}
+                          width="100%"
+                          height="auto"
+                        />
+                        <button onClick={takePhoto}>Take Photo</button>
+                        {imageData && (
+                          <>
+                            <img src={`data:image/jpeg;base64,${imageData}`} alt="Captured" />
+                            <button onClick={savePhoto}>Save Photo</button>
+                            <button onClick={deletePhoto}>Delete Photo</button>
+                          </>
+                        )}
+                      </div>
                     )}
                   </div>
                 )}
@@ -375,12 +378,12 @@ const Raportti = () => {
                   </div>
                 )}
                 <br /><br />
-                 
+
               </div>
             ))}
 
           </div>
-          
+
         </div>
       )}
     </div>

@@ -1,0 +1,31 @@
+ul {
+  list-style-type: none;
+  padding: 0; 
+  display: flex; 
+  flex-wrap: wrap;
+  justify-content: center; 
+}
+
+ul li {
+  margin-right: 10px; 
+  flex-direction: row;
+  justify-content: center; 
+}
+
+#button2 {
+  background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    outline: 2px, black;
+    width: 175px;
+    border: 1px solid white;
+}
+
+#button2:hover {
+  background-color: #2980b9;
+}
