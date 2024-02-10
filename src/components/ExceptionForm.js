@@ -14,13 +14,14 @@ export default function ExceptionForm({ saveException, exception, ob_index, ex_i
 
   const [hideButton, sethideButton] = useState(false);
   const [showButton, setshowButton] = useState(true);
+  const [showForm, setShowForm] = useState(false);
 
   useEffect(() => {
     setPoikkeama(exception.description)
     setVastuutaho(exception.vastuu)
     setSelectedUrgency(exception.urgency)
 
-    const storedData = localStorage.getItem('Testi');
+    const storedData = localStorage.getItem('saveData');
     if (storedData && exception.description && exception.vastuu && exception.urgency) {
       setshowButton(false); 
       sethideButton(true); 
@@ -38,16 +39,16 @@ export default function ExceptionForm({ saveException, exception, ob_index, ex_i
     e.preventDefault();
     sethideButton(false);
     setshowButton(true);
-  
     setPoikkeama('');
     setVastuutaho('');
     setSelectedUrgency('');
-    localStorage.removeItem('Testi');
-    
+    saveException(undefined,undefined,undefined,ob_index, ex_index);
   };
+
 
   return (
     <form className='exception-form'>
+      
       <div>
         <input
           type="text"
@@ -80,11 +81,11 @@ export default function ExceptionForm({ saveException, exception, ob_index, ex_i
             </option>
           ))}
         </select>
+
       </div>
       <br></br>
       {!hideButton && <button id="button" onClick={save}>Tallenna</button>}
       {!showButton && <button id="button" onClick={deleteData}>Poista</button>}
-
     </form>
   )
 }

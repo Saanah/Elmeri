@@ -9,7 +9,7 @@ import { initialRoomsState } from '../components/InitialObject';
 
 function Main() {
   const [data, setData] = useState(() => {
-    const storedData = localStorage.getItem('Testi');
+    const storedData = localStorage.getItem('saveData');
     if (storedData) {
       try {
         const parsedData = JSON.parse(storedData);
@@ -27,7 +27,7 @@ function Main() {
   const [selectedCategoryIndex,setSelectedCategoryIndex] = useState(0)
 
   useEffect(() => {
-    localStorage.setItem('Testi', JSON.stringify(data));
+    localStorage.setItem('saveData', JSON.stringify(data));
   }, [data]);
   
   const addException = (index) => {
@@ -44,7 +44,11 @@ function Main() {
     tempObservations[ob_index].exceptions[ex_index].description = poikkeama;
     tempObservations[ob_index].exceptions[ex_index].vastuu = vastuu;
     tempObservations[ob_index].exceptions[ex_index].urgency = urgency;
-    console.log(data)
+
+    if (poikkeama === undefined && vastuu === undefined && urgency === undefined) {
+      tempObservations[ob_index].exceptions = [];
+    }
+
     tempData.rooms[selectedRoomIndex].categories[selectedCategoryIndex].observations = tempObservations
     setData(tempData)
   }
