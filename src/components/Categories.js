@@ -6,6 +6,7 @@ export default function Categories({ categories, selectedCategoryIndex, setSelec
     <div>
       {categories.map((category, index) => (
         <button
+          className={selectedCategoryIndex === index ? "selectedcategory" : ""}
           id="buttonsforcategory"
           key={index}
           onClick={() => setSelectedCategoryIndex(index)}

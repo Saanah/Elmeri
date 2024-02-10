@@ -5,21 +5,30 @@ import Categories from '../components/Categories';
 import Observations from '../components/Observations';
 import { initialRoomsState } from '../components/InitialObject';
 
+
+
 function Main() {
-  const [data,setData] = useState(initialRoomsState)
+  const [data, setData] = useState(() => {
+    const storedData = localStorage.getItem('Testi');
+    if (storedData) {
+      try {
+        const parsedData = JSON.parse(storedData);
+        if (parsedData && parsedData.rooms) {
+          return parsedData;
+        } 
+      } catch (e) {
+        console.log("Error parsing data from local storage: ", e);
+      }
+    }
+    return initialRoomsState;
+  });
+
   const [selectedRoomIndex, setSelectedRoomIndex] = useState(0)
   const [selectedCategoryIndex,setSelectedCategoryIndex] = useState(0)
 
   useEffect(() => {
     localStorage.setItem('Testi', JSON.stringify(data));
   }, [data]);
-  
-  useEffect(() => {
-    const storedData = localStorage.getItem('Testi');
-    if (storedData) {
-      setData(JSON.parse(storedData));
-    }
-  }, []);
   
   const addException = (index) => {
     const tempData = {...data} 
@@ -35,9 +44,7 @@ function Main() {
     tempObservations[ob_index].exceptions[ex_index].description = poikkeama;
     tempObservations[ob_index].exceptions[ex_index].vastuu = vastuu;
     tempObservations[ob_index].exceptions[ex_index].urgency = urgency;
-
     console.log(data)
-
     tempData.rooms[selectedRoomIndex].categories[selectedCategoryIndex].observations = tempObservations
     setData(tempData)
   }
@@ -52,11 +59,24 @@ function Main() {
     setData(tempData)
   }
 
-  
-
+  const goThrough = () => {
+    const room = data.rooms[selectedRoomIndex];
+    if (room) {
+      const category = room.categories[selectedCategoryIndex];
+      if (category) {
+        category.observations.forEach(observation => {
+          if (observation.inOrder === 0 && observation.exceptions.length === 0) {
+            console.log("testi");
+          } else {
+            console.log("toimii");
+          }
+        });
+      }
+    }
+  };
 
   return (
-    <div id="container">
+    <div className="container">
       <Rooms 
         rooms={data.rooms} 
         selectedRoomIndex={selectedRoomIndex} 

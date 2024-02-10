@@ -1,7 +1,8 @@
 import './ExceptionForm.css';
 import React, { useEffect, useState } from 'react'
 
-export default function ExceptionForm({ saveException, exception, ob_index, ex_index}) {
+
+export default function ExceptionForm({ saveException, exception, ob_index, ex_index }) {
   const [poikkeama, setPoikkeama] = useState(exception.description)
   const [vastuutaho, setVastuutaho] = useState(exception.description)
   const [selectedUrgency, setSelectedUrgency] = useState('');
@@ -11,33 +12,40 @@ export default function ExceptionForm({ saveException, exception, ob_index, ex_i
     { value: 'kiireellinen', label: 'kiireellinen' },
   ];
 
-  const [hideButton, sethideButton] = useState(false); 
-  const [showButton, setshowButton] = useState(true); 
+  const [hideButton, sethideButton] = useState(false);
+  const [showButton, setshowButton] = useState(true);
+
   useEffect(() => {
     setPoikkeama(exception.description)
     setVastuutaho(exception.vastuu)
     setSelectedUrgency(exception.urgency)
-  }, [exception])
 
+    const storedData = localStorage.getItem('Testi');
+    if (storedData && exception.description && exception.vastuu && exception.urgency) {
+      setshowButton(false); 
+      sethideButton(true); 
+    }
+  }, [exception])
 
   const save = (e) => {
     e.preventDefault()
     sethideButton(true)
     setshowButton(false)
-    saveException(poikkeama,vastuutaho,selectedUrgency, ob_index, ex_index);
+    saveException(poikkeama, vastuutaho, selectedUrgency, ob_index, ex_index);
   };
 
   const deleteData = (e) => {
-    e.preventDefault()
-    sethideButton(false)
-    setshowButton(true)
-
-    setPoikkeama('')
-    setVastuutaho(''); 
-    setSelectedUrgency(''); 
+    e.preventDefault();
+    sethideButton(false);
+    setshowButton(true);
+  
+    setPoikkeama('');
+    setVastuutaho('');
+    setSelectedUrgency('');
+    localStorage.removeItem('Testi');
+    
   };
 
-  
   return (
     <form className='exception-form'>
       <div>
@@ -48,17 +56,24 @@ export default function ExceptionForm({ saveException, exception, ob_index, ex_i
           placeholder="Poikkeama/toimenpide" /><br
         />
       </div>
+      <br></br>
       <div>
         <input
           type="text"
           value={vastuutaho}
           onChange={e => setVastuutaho(e.target.value)}
-          placeholder="Vastuutaho"/><br
+          placeholder="Vastuutaho" /><br
         />
       </div>
+      
       <div>
-        <select value={selectedUrgency} onChange={e => setSelectedUrgency(e.target.value)}>
-          <option value="">Tila</option>
+        <br></br>
+        <select
+          value={selectedUrgency}
+          onChange={e => setSelectedUrgency(e.target.value)}
+          style={{ width: "200px", padding: "8px", borderRadius: "5px", fontSize: "20px"}} 
+        >
+          <option value="">Valitse Tila</option>
           {urgencyOptions.map(urgency => (
             <option key={urgency.value} value={urgency.value}>
               {urgency.label}
@@ -69,7 +84,7 @@ export default function ExceptionForm({ saveException, exception, ob_index, ex_i
       <br></br>
       {!hideButton && <button id="button" onClick={save}>Tallenna</button>}
       {!showButton && <button id="button" onClick={deleteData}>Poista</button>}
-      
+
     </form>
   )
 }

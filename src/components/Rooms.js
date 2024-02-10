@@ -36,11 +36,12 @@ export default function Rooms({rooms,selectedRoomIndex,setSelectedRoomIndex}) {
 
   return (
     <div>
-      <h2>Valitse Tila: </h2>
+      
       <ul className="room-list">
         {rooms.map((room, index) => (
           <li key={room.name}>
             <button
+              className={selectedRoomIndex === index ? "selected" : ""}
               id="button2"
               type="button"
               onClick={() => switchRoom(index)}
@@ -50,7 +51,6 @@ export default function Rooms({rooms,selectedRoomIndex,setSelectedRoomIndex}) {
           </li>
         ))}
       </ul>
-      <h2>You Selected: {tila}</h2>
     </div>
   );
 }

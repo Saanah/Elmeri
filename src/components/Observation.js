@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ExceptionForm from './ExceptionForm';
 import './Observation.css'
 
-
-export default function Observation({ observation, ob_index, saveInOrder, saveException, getException}) {
+export default function Observation({ observation, ob_index, saveInOrder, saveException, getException }) {
   const [number, setNumber] = useState(observation.inOrder);
 
   useEffect(() => {
@@ -11,32 +10,26 @@ export default function Observation({ observation, ob_index, saveInOrder, saveEx
   }, [observation]);
 
   const increment = () => {
-    setNumber(prevNumber => {
-      const updatedNumber = prevNumber + 1;
-      saveInOrder(updatedNumber, ob_index);
-      return updatedNumber;
-    });
+    const updatedNumber = number + 1;
+    setNumber(updatedNumber);
+    saveInOrder(updatedNumber, ob_index);
   };
 
   const decrement = () => {
-    setNumber(prevNumber => {
-      const updatedNumber = prevNumber - 1;
-      saveInOrder(updatedNumber, ob_index);
-      return updatedNumber;
-    });
+    const updatedNumber = number - 1;
+    setNumber(updatedNumber);
+    saveInOrder(updatedNumber, ob_index);
   };
-
 
   return (
     <>
-    
       <p>{observation.name}</p>
       <div>
         <label>Kunnossa</label>
         <div>
-          <button id = "buttons" onClick={decrement}>-</button>
+          <button id="buttons" onClick={decrement}>-</button>
           <span>{number}</span>
-          <button id = "buttons" onClick={increment}>+</button>
+          <button id="buttons" onClick={increment}>+</button>
         </div>
       </div>
       <p>Poikkeamat</p>
