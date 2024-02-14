@@ -20,19 +20,20 @@
   align-items: center;
 }
 
-.btn-container {
-  margin-top: 10px;
+div.camera-container button {
+  width: 50%;
+}
+
+.camera-controls{
+  padding: 1rem;
+  margin-top: 0.3rem;
 }
 
 @media (max-width: 600px) {
   .camera-container {
     width: 100%;
   }
-  .btn-container {
-    margin-top: 5px;
-  }
 }
-
 
 .Ohjeet{
 

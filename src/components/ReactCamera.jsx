@@ -2,6 +2,7 @@ import Webcam from "react-webcam";
 import "../App.css";
 import { IoCameraReverseOutline } from "react-icons/io5";
 import { useCallback, useRef, useState } from "react";
+import Button from "@mui/material/Button";
 
 //HOX! Works only with HTTPS connection -> 'HTTPS=true npm start'
 //Works with chrome, problems with firefox on mobile
@@ -33,20 +34,18 @@ export default function ReactCamera() {
       screenshotQuality={1}
       mirrored={mirrored}
       videoConstraints={{
-        facingMode: mirrored ? 'user' : 'environment',
+        facingMode: mirrored ? 'user' : 'environment',  //Etu- ja takakamera
       }}
       screenshotFormat="image/jpeg"/>
     )}
     <div className="camera-controls">
-        <IoCameraReverseOutline onClick={() => setMirrored(!mirrored)} size={30}/>
+        <IoCameraReverseOutline onClick={() => setMirrored(!mirrored)} size={32}/>
       </div>
-    <div className="btn-container">
       {imgSrc ? (
-        <button onClick={retakeImage}>Ota uusi kuva</button>
+        <Button variant="contained" onClick={retakeImage}>Ota uusi kuva</Button>
       ) : (
-        <button onClick={capture}>Ota kuva</button>
+        <Button variant="contained" onClick={capture}>Ota kuva</Button>
       )}
-    </div>
   </div>
   )
 }
