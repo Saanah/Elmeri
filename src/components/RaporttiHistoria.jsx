@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import RaporttiKortti from "./RaporttiKortti";
-import RaportSortDropdown from "./RaportSortDropdown";
 import {
   AiOutlineArrowDown,
   AiOutlineArrowUp,
@@ -117,7 +116,7 @@ export default function RaporttiHistoria() {
             onClick={() => setArrowState(!isArrowDown)}
           />
         )}
-        <RaportSortDropdown />
+       {/* <RaportSortDropdown />*/}
       </div>
       <div>
         {raportMetadata.map((raport) => (

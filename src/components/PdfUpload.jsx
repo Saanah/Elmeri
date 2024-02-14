@@ -94,7 +94,7 @@ export default function PdfUpload() {
       const docRef = await addDoc(raportsCollection, fileMetadata);
       const id = docRef.id;
       console.log("File metadata saved to Firestore with ID: ", id);
-      await setDoc(doc(firestoreDb, `raports/${id}`), { id }, { merge: true });
+      await setDoc(doc(firestoreDb, `raports/${id}`), { id }, { merge: true }); //Asetetaan Firestoren automaattinen ID myös dokumentin tietoihin
       window.location.reload(); // Would be better as a state transition refresh
     } catch (error) {
       console.error("Error saving metadata: ", error);

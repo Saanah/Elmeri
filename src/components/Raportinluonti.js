@@ -40,7 +40,7 @@ function Raportinluonti() {
             id="textbox1"
             value={input1}
             onChange={handleInputChange1}
-            placeholder="Etunimi Sukunimi"
+            placeholder="Etunimi AAAAAAA Sukunimi"
           />
           <button onClick={handleAddClick}>Lisää</button>
         </div>
