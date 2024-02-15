@@ -100,7 +100,7 @@ export default function RaporttiHistoria() {
         </Link>
       </div>
       <input
-          placeholder="Hae raporttia..."
+          placeholder="Hae raporttia nimellä..."
           value={textValue}
           onChange={(e) => setTextValue(e.target.value)}
         ></input>

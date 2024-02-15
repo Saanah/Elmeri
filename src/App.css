@@ -35,16 +35,16 @@ div.camera-container button {
   }
 }
 
-.Ohjeet{
-
-  height: calc(100vh - 100px);
-  width: 100%;
-}
-
 .Raporttihistoria-container{
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.Raporttihistoria-container input{
+  font-size: 1.1rem;
+  height: 40px;
+  padding: 0.5rem;
 }
 
 .CreateNewRaport-container{
@@ -56,9 +56,54 @@ div.camera-container button {
 }
 
 .CreateNewRaport-items{
-
   width: 100%;
-  margin-bottom: 2rem;
+}
+
+.Observers {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 70%;
+  height: 40px;
+  padding: 0.5rem;
+  margin: 10px auto;
+  border-radius: 0.4rem;
+  background-color: #f4f4f4;
+}
+
+.Observers span {
+  margin-left: 8px; 
+}
+
+.Observer-container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 1rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+.bold-text {
+  font-weight: 600;
+}
+
+.CreateNewRaport-container hr {
+
+  border: 1px solid #e0e0e0;
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.CreateNewRaport-container .MuiButton-root {
+  margin-top: 2rem;
+}
+
+.MuiAutocomplete-listbox {
+  flex-direction: column;
+  align-items: flex-start;
+  flex-wrap: nowrap;
 }
 
 .Header{
@@ -107,20 +152,6 @@ div.camera-container button {
   padding-top: 1em;
 }
 
-.Observers {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100px;
-  margin: 10px auto;
-}
-
-button {
-  width: 6em;
-  min-height: 2em;
-  font-size: 1rem;
-}
-
 .Etusivu button{
 
   width: 20em;
@@ -142,7 +173,6 @@ button {
   background-color: #cc0000;
   color: #ececec;
 }
-
 
 
 .FormControl {

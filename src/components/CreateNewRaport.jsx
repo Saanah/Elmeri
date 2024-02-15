@@ -39,8 +39,8 @@ export default function CreateNewRaport() {
 
     // Jos tarkastajan nimi on tyhjä tai pienempi kuin kaksi merkkiä, älä suorita
     if (observerInput.length < 2 || observerInput.trim() === "") {
-        window.alert("Tarkastajan nimi on liian lyhyt!");
-        return;
+      window.alert("Tarkastajan nimi on liian lyhyt!");
+      return;
     }
 
     // Jos tarkastaja on jo valittu, älä lisää duplikaattia
@@ -109,35 +109,38 @@ export default function CreateNewRaport() {
             />
           )}
         />
-        <div
-          style={{
-            marginTop: "2rem",
-            marginBottom: "2rem",
-            textAlign: "center",
-          }}
-        >
-          <p>Tarkastajat:</p>
-          {selectedObservers.map((observer, index) => (
-            <div className="Observers" key={index}>
-              <span>{observer}</span>
-              <MdDelete
-                size={24}
-                onClick={() => handleDeleteObserver(observer)}
-                style={{ verticalAlign: "text-bottom" }}
-              />
-            </div>
-          ))}
-        </div>
         <Button variant="contained" onClick={saveObserverToFirestore}>
           Lisää
         </Button>
-        <p style={{ marginTop: "2rem" }}>Valitse tila</p>
-        <DropdownLabs onSelectedLab={setSelectedLab} />
-        <p>{selectedLab}</p>
-        <Link to="/tarkastuskohdat" style={{ marginTop: "2rem" }}>
-          <Button variant="contained">Jatka</Button>
-        </Link>
-      </div>
-    </div>
-  );
+        <div className="Observer-container">
+        <hr/>
+    <p className="bold-text">Tarkastajat</p>
+    {selectedObservers.length === 0 ? (
+      <p>Ei valittua tarkastajaa</p>
+    ) : (
+      selectedObservers.map((observer, index) => (
+        <div className="Observers" key={index}>
+          <span>{observer}</span>
+          <MdDelete
+            size={24}
+            onClick={() => handleDeleteObserver(observer)}
+            style={{ verticalAlign: "text-bottom" }}
+          />
+        </div>
+      ))
+    )}
+  </div>
+  <hr/>
+  <p  className="bold-text">Valitse tila</p>
+  <DropdownLabs onSelectedLab={setSelectedLab} />
+  <Link to="/tarkastuskohdat">
+    <Button variant="contained"
+    disabled={selectedObservers.length === 0}>
+      Jatka
+    </Button>
+  </Link>
+</div>
+</div>
+);
 }
+

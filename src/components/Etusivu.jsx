@@ -5,7 +5,7 @@ import { IoCreate } from "react-icons/io5";
 import { TbReportAnalytics } from "react-icons/tb";
 import { Link } from "react-router-dom";
 import ReactCamera from "./ReactCamera";
-import RaportRawDataFirestore from "./RaportRawDataFirestore";
+import RaportRawDataFirestore from "./RaportRawDataFirestore";  //Testidatan lisääminen firestoreen
 
 export default function Etusivu() {
 
@@ -16,7 +16,6 @@ export default function Etusivu() {
       </div>
       <div className="Etusivu">
         <ReactCamera/>
-        <RaportRawDataFirestore/>
         <Link to="luo_uusi_raportti">
           <Button
             variant="outlined"
