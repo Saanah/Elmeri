@@ -6,24 +6,50 @@
   flex-direction: column;
 }
 
-.Etusivu{
-  padding: 1rem;
-  width: auto;
+.Etusivu {
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  box-sizing: border-box; /* Include padding and border in the total height */
+}
+
+.camera-container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.Ohjeet{
+div.camera-container button {
+  width: 50%;
+}
 
-  height: calc(100vh - 100px);
-  width: 100%;
+a:visited {
+  color: inherit; /* or set the desired color */
+}
+
+.camera-controls{
+  padding: 1rem;
+  margin-top: 0.3rem;
+}
+
+@media (max-width: 600px) {
+  .camera-container {
+    width: 100%;
+  }
 }
 
 .Raporttihistoria-container{
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.Raporttihistoria-container input{
+  font-size: 1.1rem;
+  height: 40px;
+  padding: 0.5rem;
 }
 
 .CreateNewRaport-container{
@@ -35,9 +61,54 @@
 }
 
 .CreateNewRaport-items{
-
   width: 100%;
-  margin-bottom: 2rem;
+}
+
+.Observers {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 70%;
+  height: 40px;
+  padding: 0.5rem;
+  margin: 10px auto;
+  border-radius: 0.4rem;
+  background-color: #f4f4f4;
+}
+
+.Observers span {
+  margin-left: 8px; 
+}
+
+.Observer-container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 1rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+.bold-text {
+  font-weight: 600;
+}
+
+.CreateNewRaport-container hr {
+
+  border: 1px solid #e0e0e0;
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.CreateNewRaport-container .MuiButton-root {
+  margin-top: 2rem;
+}
+
+.MuiAutocomplete-listbox {
+  flex-direction: column;
+  align-items: flex-start;
+  flex-wrap: nowrap;
 }
 
 .Header{
@@ -86,20 +157,6 @@
   padding-top: 1em;
 }
 
-.Observers {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100px;
-  margin: 10px auto;
-}
-
-button {
-  width: 6em;
-  min-height: 2em;
-  font-size: 1rem;
-}
-
 .Etusivu button{
 
   width: 20em;
@@ -122,13 +179,6 @@ button {
   color: #ececec;
 }
 
-input{
-  width: 80%;
-  padding: 0.5rem;
-  font-size: 1rem;
-  margin: 1rem 1rem 0rem 1rem;
-  align-self: center;
-}
 
 .FormControl {
   width: 100%;
@@ -137,6 +187,28 @@ input{
 
 .button {
   font-size: 100px;
+}
+
+input[type="text"] {
+  width: fit-content;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  height: 15px;
+
+}
+
+/* Add styles for when the input is focused */
+input[type="text"]:focus {
+  border-color: #007bff; /* Change border color when focused */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add a subtle box shadow */
+}
+
+/* Add styles for placeholder text */
+input[type="text"]::placeholder {
+  color: #999;
 }
 
 a {
@@ -188,3 +260,13 @@ a {
   .center {
     text-align: center;}
 }
+
+
+
+
+
+
+
+
+
+

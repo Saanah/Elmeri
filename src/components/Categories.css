@@ -1,0 +1,26 @@
+#buttonsforcategory {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    outline: 2px, black;
+    width: fit-content;
+    border: 1px solid white;
+  }
+  #buttonsforcategory:hover {
+    background-color: #2980b9; 
+  }
+
+  .selectedcategory {
+    color: #ffffff !important; /* White text */
+    background-color: #686666 !important; /* Red background */
+    transition: background-color 0.3s ease !important;
+  }
+  
+  .selectedcategory:hover {
+    background-color: #414040 !important; /* Darker red on hover */
+  }
