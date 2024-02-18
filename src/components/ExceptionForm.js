@@ -1,5 +1,6 @@
 import './ExceptionForm.css';
 import React, { useEffect, useState } from 'react'
+import DeviceCamera from './DeviceCamera';
 
 
 export default function ExceptionForm({ saveException, exception, ob_index, ex_index }) {
@@ -48,9 +49,9 @@ export default function ExceptionForm({ saveException, exception, ob_index, ex_i
 
   return (
     <form className='exception-form'>
-      
       <div>
         <input
+          style={{marginTop: "2rem"}}
           type="text"
           value={poikkeama}
           onChange={e => setPoikkeama(e.target.value)}
@@ -72,7 +73,7 @@ export default function ExceptionForm({ saveException, exception, ob_index, ex_i
         <select
           value={selectedUrgency}
           onChange={e => setSelectedUrgency(e.target.value)}
-          style={{ width: "200px", padding: "8px", borderRadius: "5px", fontSize: "20px"}} 
+          style={{ width: "200px", padding: "8px", borderRadius: "5px", fontSize: "20px", marginBottom: "1rem"}} 
         >
           <option value="">Valitse Tila</option>
           {urgencyOptions.map(urgency => (
@@ -81,7 +82,7 @@ export default function ExceptionForm({ saveException, exception, ob_index, ex_i
             </option>
           ))}
         </select>
-
+        <DeviceCamera/>
       </div>
       <br></br>
       {!hideButton && <button id="button" onClick={save}>Tallenna</button>}

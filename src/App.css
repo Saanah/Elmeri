@@ -6,12 +6,13 @@
   flex-direction: column;
 }
 
-.Etusivu{
-  padding: 1rem;
-  width: auto;
+.Etusivu {
+  height: 75vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-end;
+  box-sizing: border-box; /* Include padding and border in the total height */
 }
 
 .camera-container {
@@ -22,6 +23,10 @@
 
 div.camera-container button {
   width: 50%;
+}
+
+a:visited {
+  color: inherit; /* or set the desired color */
 }
 
 .camera-controls{

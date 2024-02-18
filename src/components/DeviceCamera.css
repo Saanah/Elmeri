@@ -1,20 +1,38 @@
-.device-camera-container{
-
+.device-camera-container {
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
+    justify-content: center;
     width: 100%;
 }
 
-.device-camera-container Button{
-
+.device-camera-container Button {
     width: 50%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background-color: #3498db;
 }
 
-.device-camera-container img{
-
-    max-width: 100%;
-    max-height: 100%;
-    margin: 1rem auto;
+.device-camera-container img {
+    max-width: 80%;
+    max-height: 80%; 
     display: block;
+    margin: 0 auto; 
+}
+
+.top-bar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    position: relative;
+    background-color: #3498db;
+    width: 80%;
+    margin-left: 10%;
+}
+
+.delete-image {
+    background-color: #D32F2F;
+    width: 20px;
+    height: 100%;
+    padding: 0.3rem;
 }

@@ -16,6 +16,10 @@ export default function CreateNewRaport() {
   const [selectedObservers, setSelectedObservers] = useState([]);
   const [selectedLab, setSelectedLab] = useState("");
 
+  const enabledColor = "#3498db";
+  const disabledColor = "#eaeaea"; 
+ 
+
   useEffect(() => {
     getObservers();
   }, []);
@@ -109,7 +113,11 @@ export default function CreateNewRaport() {
             />
           )}
         />
-        <Button variant="contained" onClick={saveObserverToFirestore}>
+        <Button variant="contained"
+        onClick={saveObserverToFirestore}
+        style={{
+            backgroundColor: "#3498db",
+        }}>
           Lisää
         </Button>
         <div className="Observer-container">
@@ -135,7 +143,10 @@ export default function CreateNewRaport() {
   <DropdownLabs onSelectedLab={setSelectedLab} />
   <Link to="/tarkastuskohdat">
     <Button variant="contained"
-    disabled={selectedObservers.length === 0}>
+    disabled={selectedObservers.length === 0}
+    sx={{
+      background: selectedObservers.length === 0 ? disabledColor : enabledColor,
+    }}>
       Jatka
     </Button>
   </Link>
