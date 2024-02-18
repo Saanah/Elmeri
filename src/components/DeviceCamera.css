@@ -1,0 +1,20 @@
+.device-camera-container{
+
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    width: 100%;
+}
+
+.device-camera-container Button{
+
+    width: 50%;
+}
+
+.device-camera-container img{
+
+    max-width: 100%;
+    max-height: 100%;
+    margin: 1rem auto;
+    display: block;
+}
