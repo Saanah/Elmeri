@@ -4,7 +4,7 @@ import DropdownLabs from "./DropdownLabs";
 import Autocomplete from "@mui/material/Autocomplete";
 import TextField from "@mui/material/TextField";
 import { Link } from "react-router-dom";
-import "../App.css";
+import "./CreateNewRaport.css";
 import { AiOutlineHome } from "react-icons/ai";
 import { firestoreDb, collection, addDoc, getDocs } from "../firebase";
 import { MdDelete } from "react-icons/md";

@@ -1,0 +1,62 @@
+
+.Raporttihistoria-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .Raporttihistoria-container input{
+    font-size: 1.1rem;
+    height: 40px;
+    padding: 0.5rem;
+    border: none;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .Raportti-sorting{
+  
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: auto;
+    height: fit-content;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .Raporttikortti{
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 1rem 1.5rem 1rem;
+    border-bottom: 2px solid grey;
+  }
+  
+  .Raporttitiedot{
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: space-between;
+    margin: 0em 1em 0 1em;
+    padding-top: 1em;
+  }
+
+  .Raporttiosat {
+    flex: 1 1 100%;
+    margin-right: 10px; 
+  }
+  
+  .Raporttikortti:active{
+  
+    background-color: #e8e8e8;
+  }
+  
+  .errorButton{
+    border-style: none;
+    background-color: #cc0000;
+    color: #ececec;
+  }

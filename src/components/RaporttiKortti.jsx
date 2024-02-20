@@ -1,5 +1,5 @@
 import React from "react";
-import "../App.css";
+import "./RaporttiHistoria_RaporttiKortti.css";
 import { TbReportAnalytics } from "react-icons/tb";
 import Dialogi from "./Dialogi";
 import Button from "@mui/material/Button";
