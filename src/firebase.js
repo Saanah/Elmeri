@@ -21,8 +21,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 //Give out database and storage
 const firestoreDb = getFirestore(app);
-const firebaseStorage = getStorage(app);
 //Firabase storage reference
-const storageRef = ref(firebaseStorage, "gs://elmeri-c72f7.appspot.com")
 
-export { firestoreDb, storageRef, collection, getDocs, query, addDoc, orderBy, where, getDownloadURL, ref, uploadBytes, deleteObject, doc, deleteDoc, setDoc, Timestamp}
+export { firestoreDb, collection, getDocs, query, addDoc, orderBy, where, getDownloadURL, ref, uploadBytes, deleteObject, doc, deleteDoc, setDoc, Timestamp}

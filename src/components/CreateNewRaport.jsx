@@ -1,6 +1,5 @@
 import React, { useEffect, useState} from "react";
 import Button from "@mui/material/Button";
-import DropdownLabs from "./DropdownLabs";
 import Autocomplete from "@mui/material/Autocomplete";
 import TextField from "@mui/material/TextField";
 import { Link, useNavigate } from "react-router-dom";
@@ -137,7 +136,6 @@ export default function CreateNewRaport() {
   </div>
   <hr/>
   <p  className="bold-text">Valitse tila</p>
-  <DropdownLabs onSelectedLab={setSelectedLab} />
   <Button
   variant="contained"
   onClick={() => selectedObservers.length !== 0 && navigate('/tarkastuskohdat')}
@@ -155,4 +153,3 @@ export default function CreateNewRaport() {
 </div>
 );
 }
-
