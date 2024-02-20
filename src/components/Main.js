@@ -18,6 +18,7 @@ function Main() {
         } 
       } catch (e) {
         console.log("Error parsing data from local storage: ", e);
+        alert("Error parsing data from local storage: ", e)
       }
     }
     return initialRoomsState;
@@ -48,8 +49,9 @@ function Main() {
     if (poikkeama === undefined && vastuu === undefined && urgency === undefined) {
       tempObservations[ob_index].exceptions = [];
     }
-
+    
     tempData.rooms[selectedRoomIndex].categories[selectedCategoryIndex].observations = tempObservations
+    
     setData(tempData)
   }
 
@@ -62,22 +64,6 @@ function Main() {
     tempData.rooms[selectedRoomIndex].categories[selectedCategoryIndex].observations = tempObservations
     setData(tempData)
   }
-
-  const goThrough = () => {
-    const room = data.rooms[selectedRoomIndex];
-    if (room) {
-      const category = room.categories[selectedCategoryIndex];
-      if (category) {
-        category.observations.forEach(observation => {
-          if (observation.inOrder === 0 && observation.exceptions.length === 0) {
-            console.log("testi");
-          } else {
-            console.log("toimii");
-          }
-        });
-      }
-    }
-  };
 
   return (
     <div className="container">

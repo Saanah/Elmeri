@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react'
 export default function ExceptionForm({ saveException, exception, ob_index, ex_index }) {
   const [poikkeama, setPoikkeama] = useState(exception.description)
   const [vastuutaho, setVastuutaho] = useState(exception.description)
+  const [checkData, setCheckData] = useState()
   const [selectedUrgency, setSelectedUrgency] = useState('');
   const urgencyOptions = [
     { value: 'matala', label: 'matala' },
@@ -48,7 +49,6 @@ export default function ExceptionForm({ saveException, exception, ob_index, ex_i
 
   return (
     <form className='exception-form'>
-      
       <div>
         <input
           type="text"
