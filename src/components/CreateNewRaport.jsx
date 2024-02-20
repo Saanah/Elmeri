@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState} from "react";
 import Button from "@mui/material/Button";
 import DropdownLabs from "./DropdownLabs";
 import Autocomplete from "@mui/material/Autocomplete";
 import TextField from "@mui/material/TextField";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./CreateNewRaport.css";
 import { AiOutlineHome } from "react-icons/ai";
 import { firestoreDb, collection, addDoc, getDocs } from "../firebase";
@@ -15,10 +15,7 @@ export default function CreateNewRaport() {
   const [observerInput, setObserverInput] = useState("");
   const [selectedObservers, setSelectedObservers] = useState([]);
   const [selectedLab, setSelectedLab] = useState("");
-
-  const enabledColor = "#3498db";
-  const disabledColor = "#eaeaea"; 
- 
+  const navigate = useNavigate()
 
   useEffect(() => {
     getObservers();
@@ -141,15 +138,19 @@ export default function CreateNewRaport() {
   <hr/>
   <p  className="bold-text">Valitse tila</p>
   <DropdownLabs onSelectedLab={setSelectedLab} />
-  <Link to="/tarkastuskohdat">
-    <Button variant="contained"
-    disabled={selectedObservers.length === 0}
-    sx={{
-      background: selectedObservers.length === 0 ? disabledColor : enabledColor,
-    }}>
-      Jatka
-    </Button>
-  </Link>
+  <Button
+  variant="contained"
+  onClick={() => selectedObservers.length !== 0 && navigate('/tarkastuskohdat')}
+  sx={{
+    backgroundColor: selectedObservers.length === 0 ? "#eaeaea" : "#3498db",
+    '&:disabled': {
+      backgroundColor: "#eaeaea",
+    },
+  }}
+  disabled={selectedObservers.length === 0}
+>
+   Jatka
+</Button>
 </div>
 </div>
 );
