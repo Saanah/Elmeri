@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
 import { IoCreate } from "react-icons/io5";
 import { TbReportAnalytics } from "react-icons/tb";
-import "./Etusivu.css"; // Make sure to import your CSS file
+import "./Etusivu.css";
+
 
 export default function Etusivu() {
   return (
