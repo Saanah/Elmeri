@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs, doc, addDoc, deleteDoc, setDoc, Timestamp, query, orderBy, where} from "firebase/firestore";
+import { getFirestore} from "firebase/firestore";
 import { getDownloadURL, getStorage, ref, uploadBytes, deleteObject} from 'firebase/storage'
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -21,6 +21,5 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 //Give out database and storage
 const firestoreDb = getFirestore(app);
-//Firabase storage reference
 
-export { firestoreDb, collection, getDocs, query, addDoc, orderBy, where, getDownloadURL, ref, uploadBytes, deleteObject, doc, deleteDoc, setDoc, Timestamp}
+export { firestoreDb}

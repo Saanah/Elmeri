@@ -1,11 +1,10 @@
-import React, { useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import Button from "@mui/material/Button";
 import Autocomplete from "@mui/material/Autocomplete";
 import TextField from "@mui/material/TextField";
 import { Link, useNavigate } from "react-router-dom";
 import "./CreateNewRaport.css";
 import { AiOutlineHome } from "react-icons/ai";
-import { firestoreDb, collection, addDoc, getDocs } from "../firebase";
 import { MdDelete } from "react-icons/md";
 
 export default function CreateNewRaport() {
@@ -13,71 +12,56 @@ export default function CreateNewRaport() {
   const [savedObservers, setSavedObservers] = useState([]);
   const [observerInput, setObserverInput] = useState("");
   const [selectedObservers, setSelectedObservers] = useState([]);
-  const [selectedLab, setSelectedLab] = useState("");
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   useEffect(() => {
-    getObservers();
+    getObserversFromLocalStorage();  //observer statejen vaihtuminen aktivoi rerenderöinnin, joten ei tarvita erillistä dependencyä []
   }, []);
 
-  //Hae tallennetut tarkastajat Firestoresta, jotta ne voidaan näyttää dropdownissa
-  const getObservers = async () => {
-    try {
-      const observerCollectionRef = collection(firestoreDb, "saved_observers");
-      const observerSnapshot = await getDocs(observerCollectionRef);
-      const observerData = observerSnapshot.docs.map(
-        (observerDoc) => observerDoc.data().name
-      );
-      setSavedObservers(observerData);
-    } catch (error) {
-      console.error("Error getting observers from Firestore: ", error);
-    }
+  //Hakee tallennetut tarkastajat local storagesta, muuten palauttaa tyhjän jonon
+  const getObserversFromLocalStorage = () => {
+    const observersFromLocalStorage = JSON.parse(localStorage.getItem("savedObservers")) || [];
+    setSavedObservers(observersFromLocalStorage);
   };
 
-  //Talenna lisätty tarkastaja Firestoreen, jos se täyttää kriteerit
-  const saveObserverToFirestore = async () => {
-
-    // Jos tarkastajan nimi on tyhjä tai pienempi kuin kaksi merkkiä, älä suorita
+  //Tallentaa lisätyt tarkastajat local storageen
+  const saveObserverToLocalStorage = () => {
     if (observerInput.length < 2 || observerInput.trim() === "") {
       window.alert("Tarkastajan nimi on liian lyhyt!");
       return;
     }
 
-    // Jos tarkastaja on jo valittu, älä lisää duplikaattia
+    //Tarkistaa, jos tarkastaja on jo valittuna, eli löytyykö se selectedObservers-jonoon
     if (selectedObservers.includes(observerInput)) {
       window.alert("Tarkastaja on jo lisätty!");
-      setObserverInput("");
-    }
-    //Jos tarkastaja on jo tallennettu Firestoreen, älä tallenna duplikaattia, mutta lisää tarkastajaksi listaan
-    else if (savedObservers.includes(observerInput)) {
-      setSelectedObservers([...selectedObservers, observerInput]);
-      setObserverInput("");
+      setObserverInput(""); //tyhjentää tarkastajan lisäys input fieldin
     }
     else {
-      //Tallenna uusi tarkastaja Firestoreen
-      try {
-        const observerCollectionRef = collection(
-          firestoreDb,
-          "saved_observers"
-        );
-        await addDoc(observerCollectionRef, { name: observerInput });
-        console.log("Observer added to Firestore:", observerInput);
-        getObservers(); // Hae dropdowniin päivitetyt tarkastajat
-        setObserverInput(""); // Puhdista input fieldi
-        setSelectedObservers([...selectedObservers, observerInput]); // Lisää valittu tarkastaja
+
+      //Jos tarkastajaa ei ole vielä lisätty, lisää se valittuihin tarkastajiin
+      const updatedSelectedObservers = [...selectedObservers, observerInput];
+      setSelectedObservers(updatedSelectedObservers);
+
+      //Jos tallennetuissa tarkastajissa ei ole vielä kyseistä tarkastajaa, lisää tarkastaja savedObserves-jonoon
+      if (!savedObservers.includes(observerInput)) {
+        const updatedSavedObservers = [...savedObservers, observerInput];
+        setSavedObservers(updatedSavedObservers);
+        localStorage.setItem("savedObservers", JSON.stringify(updatedSavedObservers)); //Päivitä local storage uudella arvolla
       }
-      catch (error) {
-        console.error("Error adding observer to Firestore: ", error);
-      }
+
+      setObserverInput("");
+
     }
   };
 
-  //Poista valittu tarkastaja
+  //Poistaa tarkastajan valituista tarkastajista ja päivättää valitut tarkastajat
   const handleDeleteObserver = (observerToDelete) => {
-    const updatedObservers = selectedObservers.filter(
+
+    const updatedSelectedObservers = selectedObservers.filter(
       (observer) => observer !== observerToDelete
     );
-    setSelectedObservers(updatedObservers);
+
+    setSelectedObservers(updatedSelectedObservers);
   };
 
   return (
@@ -109,47 +93,50 @@ export default function CreateNewRaport() {
             />
           )}
         />
-        <Button variant="contained"
-        onClick={saveObserverToFirestore}
-        style={{
+        <Button
+          variant="contained"
+          onClick={saveObserverToLocalStorage}
+          style={{
             backgroundColor: "#3498db",
-        }}>
+          }}
+        >
           Lisää
         </Button>
         <div className="Observer-container">
-        <hr/>
-    <p className="bold-text">Tarkastajat</p>
-    {selectedObservers.length === 0 ? (
-      <p>Ei valittua tarkastajaa</p>
-    ) : (
-      selectedObservers.map((observer, index) => (
-        <div className="Observers" key={index}>
-          <span>{observer}</span>
-          <MdDelete
-            size={24}
-            onClick={() => handleDeleteObserver(observer)}
-            style={{ verticalAlign: "text-bottom" }}
-          />
+          <hr />
+          <p className="bold-text">Tarkastajat</p>
+          {selectedObservers.length === 0 ? (
+            <p>Ei valittua tarkastajaa</p>
+          ) : (
+            selectedObservers.map((observer, index) => (
+              <div className="Observers" key={index}>
+                <span>{observer}</span>
+                <MdDelete
+                  size={24}
+                  onClick={() => handleDeleteObserver(observer)}
+                  style={{ verticalAlign: "text-bottom" }}
+                />
+              </div>
+            ))
+          )}
         </div>
-      ))
-    )}
-  </div>
-  <hr/>
-  <p  className="bold-text">Valitse tila</p>
-  <Button
-  variant="contained"
-  onClick={() => selectedObservers.length !== 0 && navigate('/tarkastuskohdat')}
-  sx={{
-    backgroundColor: selectedObservers.length === 0 ? "#eaeaea" : "#3498db",
-    '&:disabled': {
-      backgroundColor: "#eaeaea",
-    },
-  }}
-  disabled={selectedObservers.length === 0}
->
-   Jatka
-</Button>
-</div>
-</div>
-);
+        <Button
+          variant="contained"
+          onClick={() =>
+            selectedObservers.length !== 0 && navigate("/tarkastuskohdat")
+          }
+          sx={{
+            backgroundColor:
+              selectedObservers.length === 0 ? "#eaeaea" : "#3498db",
+            "&:disabled": {
+              backgroundColor: "#eaeaea",
+            },
+          }}
+          disabled={selectedObservers.length === 0}
+        >
+          Jatka
+        </Button>
+      </div>
+    </div>
+  );
 }
