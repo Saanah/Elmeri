@@ -8,7 +8,7 @@ Nettisivulla voidaan luoda uusia raportteja digitaalisesti. Suoritetuista tarkas
 
 ## Käytetyt teknologiat
 
-Frontend: React-kirjasto. <br> Backend: Firebase Firestore sekä Cloud Storage.
+Frontend: React-kirjasto. <br> Backend: Firebase Firestore sekä Cloud Storage (Firebase versio Firebase branchissa).
 
 
 
