@@ -1,14 +1,6 @@
-# ELMERI - TARKISTUSKIERROKSET
+# ELMERI - TARKISTUSKIERROKSET / Firebase versio
 
-Nettisivu, jonka tarkoituksena on helpottaa OAMKin labrojen tarkistuskierrosten suorittamista ja tulosten analysointia. Tehty osana OAMKin yritysprojektikurssia.
+Versio, jossa on mukana raporttihistoria, joka hakee Firestoreen tallennettujen linkkien perusteella Firebase Storagesta raporttien PDF-tiedostot aikajärjestyksessä.
 
-## Toiminta
-
-Nettisivulla voidaan luoda uusia raportteja digitaalisesti. Suoritetuista tarkastuskierroksista tallennetaan sekä PDF-muotoinen raportti että raportin raakadata Firebaseen. Tehtyjä raportteja voidaan myös selata nettisivulta päivämäärän mukaan.
-
-## Käytetyt teknologiat
-
-Frontend: React-kirjasto. <br> Backend: Firebase Firestore sekä Cloud Storage.
-
-
+Hox! Ei sisällä raporttimetadatan tai PDF-tiedostojen latausta Firebaseen.
 
