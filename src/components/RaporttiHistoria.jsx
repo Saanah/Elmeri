@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import RaporttiKortti from "./RaporttiKortti";
+import "./RaporttiHistoria_RaporttiKortti.css";
 import {
   AiOutlineArrowDown,
   AiOutlineArrowUp,

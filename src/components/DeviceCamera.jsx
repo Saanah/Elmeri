@@ -53,7 +53,7 @@ function DeviceCamera() {
           </div>
           <img
             src={imgSrc}
-            alt='Captured'
+            alt='Otettu kuva'
           />
         </div>
       )}

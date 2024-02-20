@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ExceptionForm from './ExceptionForm';
 import './Observation.css'
-import DeviceCamera from './DeviceCamera';
 
 export default function Observation({ observation, ob_index, saveInOrder, saveException, getException }) {
   const [number, setNumber] = useState(observation.inOrder);
