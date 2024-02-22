@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
 import { IoCreate } from "react-icons/io5";
 import { TbReportAnalytics } from "react-icons/tb";
-import RaportRawDataFirestore from "./RaportRawDataFirestore";
 import "./Etusivu.css"; // Make sure to import your CSS file
 
 export default function Etusivu() {

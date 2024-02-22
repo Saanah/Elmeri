@@ -5,11 +5,18 @@
     align-items: center;
     padding: 2rem;
   }
+
+  .CreateNewRaport-container > .MuiButton-root {
+    width: 130px;
+  }
+  .CreateNewRaport-container Button:last-child{
+    align-self:flex-end;
+  }
   
   .CreateNewRaport-items{
     width: 100%;
   }
-  
+
   .Observers {
     display: flex;
     align-items: center;

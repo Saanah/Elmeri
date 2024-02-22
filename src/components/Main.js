@@ -44,11 +44,9 @@ function Main() {
     tempObservations[ob_index].exceptions[ex_index].description = poikkeama;
     tempObservations[ob_index].exceptions[ex_index].vastuu = vastuu;
     tempObservations[ob_index].exceptions[ex_index].urgency = urgency;
-
     if (poikkeama === undefined && vastuu === undefined && urgency === undefined) {
-      tempObservations[ob_index].exceptions = [];
+      tempObservations[ob_index].exceptions.splice(ex_index, 1);
     }
-
     tempData.rooms[selectedRoomIndex].categories[selectedCategoryIndex].observations = tempObservations
     setData(tempData)
   }
