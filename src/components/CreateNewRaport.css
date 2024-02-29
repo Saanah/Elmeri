@@ -1,3 +1,5 @@
+/* Mobiilin css */
+
 .CreateNewRaport-container{
     display: flex;
     flex-direction: column;
@@ -10,7 +12,7 @@
     width: 130px;
   }
   .CreateNewRaport-container Button:last-child{
-    align-self:flex-end;
+    align-self: center;
   }
   
   .CreateNewRaport-items{
@@ -19,16 +21,18 @@
 
   .Observers {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     width: 70%;
-    height: 40px;
+    min-height: 40px;
     padding: 0.5rem;
     margin: 10px auto;
     border-radius: 0.4rem;
     background-color: #f4f4f4;
+    word-break: break-all;
   }
-  
+
   .Observers span {
     margin-left: 8px; 
   }
@@ -69,3 +73,30 @@
     margin-top: 0.8rem;
   }
   
+/* Tietokoneen css */
+@media screen and (min-width: 820px) {
+  .CreateNewRaport-container {
+    padding: 4rem;
+  }
+
+  .CreateNewRaport-items{
+    width: 35%;
+  }
+
+  .Observers {
+    width: 20%;
+    flex-wrap: wrap;
+  }
+
+  .CreateNewRaport-container .MuiButton-root {
+    width: 150px; 
+  }
+
+  .CreateNewRaport-container hr {
+
+    border: 1px solid #e0e0e0;
+    width: 50%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}

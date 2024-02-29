@@ -117,7 +117,7 @@ const initialRoomsState =
           "observations": [
             {
               "name": "Suojaimet, vaatetus, riskinotto",
-              "inOrder": 1,
+              "inOrder": 0,
               "exceptions": [
                 /* {
                   "description":"Test 1"
@@ -134,12 +134,12 @@ const initialRoomsState =
           "observations": [
             {
               "name": "Fyysinen kuormitus",
-              "inOrder": 2,
+              "inOrder": 0,
               "exceptions": []
             },
             {
               "name": "Työpisteen ja välineiden ergonomia",
-              "inOrder": 3,
+              "inOrder": 0,
               "exceptions": []
             }
           ]
@@ -230,7 +230,7 @@ const initialRoomsState =
           "observations": [
             {
               "name": "Suojaimet, vaatetus, riskinotto",
-              "inOrder": 1,
+              "inOrder": 0,
               "exceptions": [
                 /* {
                   "description":"Test 1"
@@ -247,12 +247,12 @@ const initialRoomsState =
           "observations": [
             {
               "name": "Fyysinen kuormitus",
-              "inOrder": 2,
+              "inOrder": 0,
               "exceptions": []
             },
             {
               "name": "Työpisteen ja välineiden ergonomia",
-              "inOrder": 3,
+              "inOrder": 0,
               "exceptions": []
             }
           ]
@@ -343,7 +343,7 @@ const initialRoomsState =
           "observations": [
             {
               "name": "Suojaimet, vaatetus, riskinotto",
-              "inOrder": 1,
+              "inOrder": 0,
               "exceptions": [
                 /* {
                   "description":"Test 1"
@@ -360,12 +360,12 @@ const initialRoomsState =
           "observations": [
             {
               "name": "Fyysinen kuormitus",
-              "inOrder": 2,
+              "inOrder": 0,
               "exceptions": []
             },
             {
               "name": "Työpisteen ja välineiden ergonomia",
-              "inOrder": 3,
+              "inOrder": 0,
               "exceptions": []
             }
           ]
@@ -456,7 +456,7 @@ const initialRoomsState =
           "observations": [
             {
               "name": "Suojaimet, vaatetus, riskinotto",
-              "inOrder": 1,
+              "inOrder": 0,
               "exceptions": [
                 /* {
                   "description":"Test 1"
@@ -473,12 +473,12 @@ const initialRoomsState =
           "observations": [
             {
               "name": "Fyysinen kuormitus",
-              "inOrder": 2,
+              "inOrder": 0,
               "exceptions": []
             },
             {
               "name": "Työpisteen ja välineiden ergonomia",
-              "inOrder": 3,
+              "inOrder": 0,
               "exceptions": []
             }
           ]
@@ -569,7 +569,7 @@ const initialRoomsState =
           "observations": [
             {
               "name": "Suojaimet, vaatetus, riskinotto",
-              "inOrder": 1,
+              "inOrder": 0,
               "exceptions": [
                 /* {
                   "description":"Test 1"
@@ -586,12 +586,12 @@ const initialRoomsState =
           "observations": [
             {
               "name": "Fyysinen kuormitus",
-              "inOrder": 2,
+              "inOrder": 0,
               "exceptions": []
             },
             {
               "name": "Työpisteen ja välineiden ergonomia",
-              "inOrder": 3,
+              "inOrder": 0,
               "exceptions": []
             }
           ]
