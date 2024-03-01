@@ -12,7 +12,7 @@ Frontend: React-kirjasto. <br> Backend: Firebase Realtime Database.
 
 ## Sovelluksen käyttöönotto.
 
-Sovelluksen saat käyttöön kun lataa tiedoston ja tiedoston sisällä teet npm install tämän jälkeen voit käynnistää sovelluksen käyttämällä komentoa npm start.
+Sovelluksen saat käyttöön kun lataat tiedoston (Git Clone tai Download Zip) ja tiedoston sisällä teet npm install tämän jälkeen voit käynnistää sovelluksen käyttämällä komentoa npm start.
 
 ## Sovellukseen tehty database
 
