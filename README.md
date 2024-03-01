@@ -8,7 +8,13 @@ Nettisivulla voidaan luoda uusia raportteja digitaalisesti. Suoritetuista tarkas
 
 ## Käytetyt teknologiat
 
-Frontend: React-kirjasto. <br> Backend: Firebase Firestore sekä Cloud Storage (Firebase versio Firebase branchissa).
+Frontend: React-kirjasto. <br> Backend: Firebase Realtime Database.
 
+## Sovelluksen käyttöön otto.
 
+Sovelluksen saat käyttöön kun lataa tiedoston ja tiedoston sisällä teet npm install tämän jälkeen voit käynnistää sovelluksen käyttämällä komentoa npm start.
+
+## Sovellukseen tehty Database
+
+Sovelluksen datan lähettäminen firebaseen on tehty esimerkillä käyttäen URL-toimintoa, tämä muokataan silleen että toimii Firebase SDK avulla.
 
