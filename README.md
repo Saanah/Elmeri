@@ -18,3 +18,6 @@ Sovelluksen saat käyttöön kun lataat tiedoston (Git Clone tai Download Zip) j
 
 Sovelluksen datan lähettäminen Firebaseen on tehty esimerkillä käyttäen URL-toimintoa, tämä muokataan niin, että Queryt toimivat Firebase SDK avulla.
 Firebase SDK-toteutukseen löytyy malli Firebase-branchista Firebase.js tiedostosta.
+
+## KORJATTAVAA
+Projektissa on turhia dependencyjä. Turhat dependencyt täytyy etsiä ja poistaa.
