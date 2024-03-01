@@ -63,7 +63,40 @@ function Main() {
     setData(tempData);
   };
 
+  //tallennetaan Data 
+  const getdata = (e) => {
+    e.preventDefault();
+    
+    // Get current date as a string
+    const currentDate = new Date().toISOString().split('T')[0]; // Get YYYY-MM-DD format
 
+    
+    const options = {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({observersFromLocalStorage: data}) 
+    };
+
+
+
+    // Modify the URL to include the current date as part of the key
+    const url = `https://elmeri-firebase-default-rtdb.europe-west1.firebasedatabase.app/Data/${currentDate}.json`;
+    
+    fetch(url, options)
+      .then(response => {
+        if (response.ok) {
+          localStorage.clear();
+          setData(initialRoomsState)
+          alert("Data sent successfully");
+        } else {
+          alert("Failed to send data");
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert("Failed to send data");
+      });
+  };
 
   return (
     <div className="container">
@@ -86,6 +119,7 @@ function Main() {
         addException={addException}
         saveException={saveException}
       />
+      <button onClick={getdata}>Submit</button>
     </div>
   );
 }
