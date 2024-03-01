@@ -10,11 +10,11 @@ Nettisivulla voidaan luoda uusia raportteja digitaalisesti. Suoritetuista tarkas
 
 Frontend: React-kirjasto. <br> Backend: Firebase Realtime Database.
 
-## Sovelluksen käyttöön otto.
+## Sovelluksen käyttöönotto.
 
 Sovelluksen saat käyttöön kun lataa tiedoston ja tiedoston sisällä teet npm install tämän jälkeen voit käynnistää sovelluksen käyttämällä komentoa npm start.
 
-## Sovellukseen tehty Database
+## Sovellukseen tehty database
 
 Sovelluksen datan lähettäminen firebaseen on tehty esimerkillä käyttäen URL-toimintoa, tämä muokataan silleen että toimii Firebase SDK avulla.
 
