@@ -1,6 +1,6 @@
-# ELMERI - TARKISTUSKIERROKSET
+# ELMERI - TARKASTUSKIERROKSET
 
-Nettisivu, jonka tarkoituksena on helpottaa OAMKin labrojen tarkistuskierrosten suorittamista ja tulosten analysointia. Tehty osana OAMKin yritysprojektikurssia.
+Nettisivu, jonka tarkoituksena on helpottaa OAMKin labrojen tarkastuskierrosten suorittamista ja tulosten analysointia. Tehty osana OAMKin yritysprojektikurssia.
 
 ## Toiminta
 
