@@ -4,7 +4,7 @@ Nettisivu, jonka tarkoituksena on helpottaa OAMKin labrojen tarkistuskierrosten 
 
 ## Toiminta
 
-Nettisivulla voidaan luoda uusia raportteja digitaalisesti. Suoritetuista tarkastuskierroksista tallennetaan raakadata Firebaseen ja haetusta datasta muodostetaan PDF-dokumentti halutessa clientissa. Tehtyjen raporttien JSON-dataa voidaan myös selata nettisivulta päivämäärän mukaan.
+Nettisivulla voidaan luoda uusia raportteja digitaalisesti. Suoritetuista tarkastuskierroksista tallennetaan raakadata Firebaseen ja haetusta datasta muodostetaan PDF-dokumentti clientissa tarvittaessa. Tehtyjen raporttien JSON-dataa voidaan myös selata nettisivulta päivämäärän mukaan.
 
 ## Käytetyt teknologiat
 
