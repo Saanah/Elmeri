@@ -22,6 +22,7 @@ Firebase SDK-toteutukseen löytyy malli Firebase-branchista Firebase.js tiedosto
 ## KORJATTAVAA
 Projektissa on ylimääräisiä dependencyjä. Turhat dependencyt täytyy etsiä ja poistaa. (good luck)
 <br>
+<br>
 Käytössäolevat depsit:
 <br>
 React useState, useEffect, React Router
