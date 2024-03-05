@@ -27,6 +27,6 @@ Käytössäolevat depsit:
 <br>
 React useState, useEffect, React Router
 <br>
-Material UI MUI -komponentit
+Material UI, MUI -komponentit
 <br>
 Firebase
