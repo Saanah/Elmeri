@@ -6,6 +6,10 @@ import { Link, useNavigate } from "react-router-dom";
 import "./CreateNewRaport.css";
 import { AiOutlineHome } from "react-icons/ai";
 import { MdDelete } from "react-icons/md";
+import { getDatabase, ref, get, child,set } from 'firebase/database';
+
+
+
 
 export default function CreateNewRaport() {
   const [selectedObserver, setSelectedObserver] = useState("");
@@ -51,6 +55,20 @@ export default function CreateNewRaport() {
 
       setObserverInput("");
 
+    }
+  };
+
+
+  const saveObserversToDatabase = async () => {
+    try {
+      const currentDate = new Date().toISOString().slice(0, 10);
+      const database = getDatabase(); // Get a reference to the database
+      const inspectorRef = ref(database, `Inspectors/${currentDate}`); // Get a reference to the path
+      await set(inspectorRef, selectedObservers); // Set the data
+      console.log("Observers saved to database successfully");
+      navigate("/tarkastuskohdat");
+    } catch (error) {
+      console.error("Error saving observers to database:", error);
     }
   };
 
@@ -122,9 +140,12 @@ export default function CreateNewRaport() {
         </div>
         <Button
           variant="contained"
-          onClick={() =>
-            selectedObservers.length !== 0 && navigate("/tarkastuskohdat")
-          }
+          onClick={() => {
+            if (selectedObservers.length !== 0) {
+              saveObserversToDatabase(); // Save observers to the database
+              navigate("/tarkastuskohdat"); // Navigate to the next page
+            }
+          }}
           sx={{
             backgroundColor:
               selectedObservers.length === 0 ? "#eaeaea" : "#3498db",

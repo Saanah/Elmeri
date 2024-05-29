@@ -16,11 +16,11 @@
   }
 
   .selectedcategory {
-    color: #ffffff !important; /* White text */
-    background-color: #686666 !important; /* Red background */
+    color: #ffffff !important; 
+    background-color: #686666 !important; 
     transition: background-color 0.3s ease !important;
   }
   
   .selectedcategory:hover {
-    background-color: #414040 !important; /* Darker red on hover */
+    background-color: #414040 !important;
   }

@@ -4,6 +4,9 @@ import Rooms from '../components/Rooms';
 import Categories from '../components/Categories';
 import Observations from '../components/Observations';
 import { initialRoomsState } from '../components/InitialObject';
+import { database } from '../firebase';
+import { push, ref, set } from "firebase/database"; // Import ref and set functions
+
 
 function Main() {
   // Tilamuuttuja datan hallintaan, alustetaan paikallisella varastolla tai oletusarvoilla 
@@ -41,62 +44,63 @@ function Main() {
   };
 
   // Tallennetaan poikkeama
-  const saveException = (poikkeama, vastuu, urgency, ob_index, ex_index) => {
-    const tempData = {...data}; 
+  const saveException = (poikkeama, vastuu, urgency, ongelma, pictureData, imgSrc, ob_index, ex_index) => {
+    const tempData = { ...data };
     const tempObservations = [...tempData.rooms[selectedRoomIndex].categories[selectedCategoryIndex].observations];
     tempObservations[ob_index].exceptions[ex_index].description = poikkeama;
     tempObservations[ob_index].exceptions[ex_index].vastuu = vastuu;
     tempObservations[ob_index].exceptions[ex_index].urgency = urgency;
-    if (poikkeama === undefined && vastuu === undefined && urgency === undefined) {
+    tempObservations[ob_index].exceptions[ex_index].ongelma = ongelma;
+    console.log(ongelma)
+    
+    if (pictureData === undefined) {
+      tempObservations[ob_index].exceptions[ex_index].pictureData = null;
+    } else {
+      tempObservations[ob_index].exceptions[ex_index].pictureData = pictureData;
+    }
+    if (poikkeama === undefined && vastuu === undefined && urgency === undefined && ongelma === undefined) {
       tempObservations[ob_index].exceptions.splice(ex_index, 1);
     }
+  
     tempData.rooms[selectedRoomIndex].categories[selectedCategoryIndex].observations = tempObservations;
     setData(tempData);
   };
 
   // Tallennetaan järjestyksessä oleva havainto
-  const saveInOrder = (inOrder, ob_index) => {
+  const saveInOrder = (inOrder, notInOrder, ob_index) => {
     const tempData = {...data}; 
     const tempObservations = [...tempData.rooms[selectedRoomIndex].categories[selectedCategoryIndex].observations];
     tempObservations[ob_index].inOrder = inOrder;
+    tempObservations[ob_index].notInOrder = notInOrder;
     tempData.rooms[selectedRoomIndex].categories[selectedCategoryIndex].observations = tempObservations;
     setData(tempData);
   };
 
-  //tallennetaan Data 
-  const getdata = (e) => {
-    e.preventDefault();
-    
-    // Get current date as a string
+  console.log(data)
+
+  function sendDataToFirebase(test) {
     const currentDate = new Date().toISOString().split('T')[0]; // Get YYYY-MM-DD format
 
-    
-    const options = {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({observersFromLocalStorage: data}) 
-    };
-
-
-
-    // Modify the URL to include the current date as part of the key
-    const url = `https://elmeri-firebase-default-rtdb.europe-west1.firebasedatabase.app/Data/${currentDate}.json`;
-    
-    fetch(url, options)
-      .then(response => {
-        if (response.ok) {
-          localStorage.clear();
-          setData(initialRoomsState)
-          alert("Data sent successfully");
-        } else {
-          alert("Failed to send data");
-        }
+    // Reference to the location where you want to store your data
+    const dataRef = ref(database, currentDate);
+  
+    // Set the data at the specified location
+    push(dataRef, test)
+      .then(() => {
+        alert("Data successfully sent to Firebase!")
+        console.log("Data successfully sent to Firebase!");
+        localStorage.clear();
       })
-      .catch(error => {
-        console.error('Error:', error);
-        alert("Failed to send data");
+      .catch((error) => {
+        alert("Error sending data to Firebase: ", error)
+        console.error("Error sending data to Firebase: ", error);
       });
-  };
+  }
+
+  const getdata = (e) => {
+    e.preventDefault();
+    sendDataToFirebase(data);
+    };
 
   return (
     <div className="container">

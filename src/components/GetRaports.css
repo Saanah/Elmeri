@@ -1,0 +1,76 @@
+/* Inside your component's CSS file or style section */
+.box-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: fit-content;
+  }
+
+  .left-heading{
+    padding-bottom: 10px;
+    padding-left: 20px;
+  }
+  .right-heading{
+    padding-bottom: 10px;
+    padding-right: 20px;
+  }
+
+  .left-header{
+    padding-bottom: 10px;
+    padding-left: 20px;
+  }
+  
+  .box {
+    border: 1px solid black;
+    padding: 7px;
+    width: 150px; 
+    min-height: 50px;
+    max-height: 100px;
+  }
+  
+  .nested-content {
+    margin-left: 20px; /* Adjust margin to create space between the number and the nested content */
+  }
+  
+  .header-container {
+    display: flex;
+    justify-content: space-between; /* Evenly distribute items; maximum space between items */
+  }
+  
+  .image-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+  }
+  
+  .centered-image {
+    max-width: 100%; /* Ensure the image doesn't exceed its container */
+    max-height: 100%; /* Ensure the image doesn't exceed its container */
+  }
+
+.box h2,
+.header-container h3 {
+  font-size: 14px; /* Adjust the font size as needed */
+}
+.box p{
+    font-size: 12px; /* Adjust the font size as needed */
+  }
+
+
+.boxExpection{
+    border: 1px solid black;
+    padding: 10px;
+    width: 345px; /* Default width for desktop */
+}
+
+.a4-container {
+  width: 210mm;
+  height: 297mm;
+  margin: 0 auto;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

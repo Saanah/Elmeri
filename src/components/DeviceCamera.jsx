@@ -3,12 +3,15 @@ import Button from "@mui/material/Button";
 import './DeviceCamera.css'
 import { FaCamera, FaTrash } from "react-icons/fa";
 
-function DeviceCamera() {
+function DeviceCamera({ onPictureCapture }) {
   const [imgSrc, setImgSrc] = useState(null);
   const fileInputRef = useRef(null);
 
   const handleImageChange = (event) => {
-    setImgSrc(URL.createObjectURL(event.target.files[0]));
+    const image = event.target.files[0];
+    const imageUrl = URL.createObjectURL(image);
+    setImgSrc(imageUrl);
+    onPictureCapture(imageUrl); // Pass the image URL to the parent component
   };
 
   const openCamera = () => {
@@ -17,6 +20,7 @@ function DeviceCamera() {
 
   const removeImage = () => {
     setImgSrc(null);
+    onPictureCapture(null); // Pass null to indicate image removal
   };
 
   return (
