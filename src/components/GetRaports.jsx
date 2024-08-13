@@ -539,7 +539,7 @@ function GetRaports() {
             <div className="image-container">
               <img src="oamk.png" alt="My Image" className="centered-image" />
             </div>
-            <h3 className="left-header">Havainnoitsijat: {Array.isArray(inspectors) ? inspectors.join(',') : ''}</h3>
+            <h3 className="left-header">Havainnoitsijat: {Array.isArray(inspectors) ? inspectors.join(', ') : ''}</h3>
             <div className="header-container">
               <h3 className="left-heading">Elmeri havaintolomake     /2</h3>
               <h3 className="right-heading">Päiväys {selectedDate}</h3>

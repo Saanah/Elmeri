@@ -51,7 +51,21 @@ function Main() {
     tempObservations[ob_index].exceptions[ex_index].vastuu = vastuu;
     tempObservations[ob_index].exceptions[ex_index].urgency = urgency;
     tempObservations[ob_index].exceptions[ex_index].ongelma = ongelma;
-    console.log(ongelma)
+
+
+    if(poikkeama === undefined) {
+      tempObservations[ob_index].exceptions[ex_index].description = null;
+    }
+    if(vastuu === undefined) {  
+      tempObservations[ob_index].exceptions[ex_index].vastuu = null;
+    }
+    if(urgency === undefined) {
+      tempObservations[ob_index].exceptions[ex_index].urgency = null;
+    }
+    if(ongelma === undefined) {
+      tempObservations[ob_index].exceptions[ex_index].ongelma = null;
+    }
+    
     
     if (pictureData === undefined) {
       tempObservations[ob_index].exceptions[ex_index].pictureData = null;
@@ -63,6 +77,8 @@ function Main() {
     }
   
     tempData.rooms[selectedRoomIndex].categories[selectedCategoryIndex].observations = tempObservations;
+    console.log(tempData)
+
     setData(tempData);
   };
 
@@ -79,8 +95,8 @@ function Main() {
   console.log(data)
 
   function sendDataToFirebase(test) {
-    const currentDate = new Date().toISOString().split('T')[0]; // Get YYYY-MM-DD format
-
+    const currentDate = new Date().toLocaleDateString('fi-FI').replace(/\./g, '-'); // Get DD-MM-YYYY format
+    
     // Reference to the location where you want to store your data
     const dataRef = ref(database, currentDate);
   
@@ -123,7 +139,7 @@ function Main() {
         addException={addException}
         saveException={saveException}
       />
-      <button onClick={getdata}>Submit</button>
+      <button id="button" onClick={getdata}>Lähetä data</button>
     </div>
   );
 }
